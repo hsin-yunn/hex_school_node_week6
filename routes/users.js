@@ -9,5 +9,7 @@ router.get('/users', handleErrorAsync(controller.index));
 router.post('/users', handleErrorAsync(controller.store));
 //show
 router.get('/users/:id', handleErrorAsync(controller.show));
+//signin
+router.post('/signin', handleErrorAsync(controller.signin));
 
 module.exports = router;
