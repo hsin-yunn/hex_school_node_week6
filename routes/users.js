@@ -1,15 +1,15 @@
 var express = require('express');
 var router = express.Router();
-const controller = require('../controllers/userController');
+const userController = require('../controllers/userController');
 const handleErrorAsync = require('../service/handleErrorAsync');
 
 //index
-router.get('/users', handleErrorAsync(controller.index));
+router.get('/users', handleErrorAsync(userController.index));
 //store
-router.post('/users', handleErrorAsync(controller.store));
+router.post('/users', handleErrorAsync(userController.store));
 //show
-router.get('/users/:id', handleErrorAsync(controller.show));
+router.get('/users/:id', handleErrorAsync(userController.show));
 //signin
-router.post('/signin', handleErrorAsync(controller.signin));
+router.post('/signin', handleErrorAsync(userController.signin));
 
 module.exports = router;
