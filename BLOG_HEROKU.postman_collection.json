@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "dbe53df5-88f6-4a47-bc4f-f7eb37a58985",
+		"_postman_id": "1a18e2c8-6504-4d1f-992f-bc90d54a190e",
 		"name": "BLOG_HEROKU",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10762245"
 	},
 	"item": [
 		{
@@ -12,14 +13,18 @@
 					"name": "Index",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "https://cryptic-citadel-20624.herokuapp.com/posts?search=&orderWay&orderBy",
-							"protocol": "https",
+							"raw": "http://{{baseUrl}}/posts?search=&orderWay&orderBy",
+							"protocol": "http",
 							"host": [
-								"cryptic-citadel-20624",
-								"herokuapp",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts"
@@ -49,10 +54,16 @@
 					"name": "Store",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"content\":\"今天吃豬排\",\n    \"user\":\"62755d5f0b8518e011bf7c11\",\n    \"image\":\"\"\n}",
+							"raw": "{\n    \"content\":\"今天吃雞排\",\n    \"image\":\"\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -60,12 +71,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://cryptic-citadel-20624.herokuapp.com/posts",
-							"protocol": "https",
+							"raw": "http://{{baseUrl}}/posts",
+							"protocol": "http",
 							"host": [
-								"cryptic-citadel-20624",
-								"herokuapp",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts"
@@ -78,14 +87,18 @@
 					"name": "Delete All",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "https://cryptic-citadel-20624.herokuapp.com/posts",
-							"protocol": "https",
+							"raw": "http://{{baseUrl}}/posts",
+							"protocol": "http",
 							"host": [
-								"cryptic-citadel-20624",
-								"herokuapp",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts"
@@ -98,14 +111,18 @@
 					"name": "Delete",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "https://cryptic-citadel-20624.herokuapp.com/posts/:id",
-							"protocol": "https",
+							"raw": "http://{{baseUrl}}/posts/:id",
+							"protocol": "http",
 							"host": [
-								"cryptic-citadel-20624",
-								"herokuapp",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
@@ -125,10 +142,16 @@
 					"name": "Update",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"content\": \"今天吃豬排\",\n    \"user\": \"62755d5f0b8518e011bf7c11\",\n    \"images\": \"\"\n}",
+							"raw": "{\n    \"content\": \"今天吃豬排\",\n    \"user\": \"62755d5f0b8518e011bf7c11\",\n    \"images\": \"\",\n    \"likes\": [\n        \"62755d5f0b8518e011bf7c11\"\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -136,12 +159,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://cryptic-citadel-20624.herokuapp.com/posts/:id",
-							"protocol": "https",
+							"raw": "http://{{baseUrl}}/posts/:id",
+							"protocol": "http",
 							"host": [
-								"cryptic-citadel-20624",
-								"herokuapp",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
@@ -150,7 +171,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": ""
+									"value": "6266ac3c13afb4417f18106e"
 								}
 							]
 						}
@@ -161,14 +182,18 @@
 					"name": "Show",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "https://cryptic-citadel-20624.herokuapp.com/posts/:id",
-							"protocol": "https",
+							"raw": "http://{{baseUrl}}/posts/:id",
+							"protocol": "http",
 							"host": [
-								"cryptic-citadel-20624",
-								"herokuapp",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
@@ -187,16 +212,16 @@
 			]
 		},
 		{
-			"name": "User",
+			"name": "Auth",
 			"item": [
 				{
-					"name": "Store",
+					"name": "Signin",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"阿花\",\n    \"avatar\":\"\",\n    \"password\":\"123123\",\n    \"email\":\"rr@gmail.com\",\n    \"gender\":\"female\"\n}",
+							"raw": "{\n    \"email\":\"banana@banana.com\",\n    \"password\":\"123123123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -204,15 +229,134 @@
 							}
 						},
 						"url": {
-							"raw": "https://cryptic-citadel-20624.herokuapp.com/users",
-							"protocol": "https",
+							"raw": "http://{{baseUrl}}/signin",
+							"protocol": "http",
 							"host": [
-								"cryptic-citadel-20624",
-								"herokuapp",
-								"com"
+								"{{baseUrl}}"
 							],
 							"path": [
-								"users"
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"apple@apple.com\",\n    \"password\":\"123123123\",\n    \"passwordConfirm\":\"123123123\",\n    \"name\":\"小蘋果\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/signup",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth Update",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"gender\":\"female\",\n    \"name\":\"小蘋果\",\n    \"avatar\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/auth/user",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://{{baseUrl}}/auth/user",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\":\"123123123\",\n    \"passwordConfirm\":\"123123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{baseUrl}}/auth/user/reset_password",
+							"protocol": "http",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"reset_password"
 							]
 						}
 					},
