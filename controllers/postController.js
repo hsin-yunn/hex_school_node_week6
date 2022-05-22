@@ -4,7 +4,7 @@ const appErrorHandle = require('../service/appErrorHandle');
 const modelHelper = require('../helpers/modelHelper');
 
 //controller setting
-const requiredFields = ['user'];
+const requiredFields = [];
 
 //index
 exports.index = async function (req, res, next) {
@@ -42,12 +42,13 @@ exports.store = async function (req, res, next) {
   //check require fields
   modelHelper.checkRequiredField(data, requiredFields, next);
   //check user is exist
-  const userId = req.body.user;
+  const userId = req.user._id;
   try {
     await User.findById(userId).exec();
   } catch {
     return next(appErrorHandle(400, 'user is not exist', next));
   }
+  data.user = userId;
   //other check
   if (!data.content && !data.image) {
     return next(appErrorHandle(400, 'data or image is required', next));
